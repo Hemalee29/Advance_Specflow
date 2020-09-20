@@ -32,5 +32,6 @@
     <PkgNUnit_Extension_NUnitV2Driver Condition=" '$(PkgNUnit_Extension_NUnitV2Driver)' == '' ">C:\Users\htshe\.nuget\packages\nunit.extension.nunitv2driver\3.6.0</PkgNUnit_Extension_NUnitV2Driver>
     <PkgNUnit_Extension_NUnitProjectLoader Condition=" '$(PkgNUnit_Extension_NUnitProjectLoader)' == '' ">C:\Users\htshe\.nuget\packages\nunit.extension.nunitprojectloader\3.5.0</PkgNUnit_Extension_NUnitProjectLoader>
     <PkgNUnit_ConsoleRunner Condition=" '$(PkgNUnit_ConsoleRunner)' == '' ">C:\Users\htshe\.nuget\packages\nunit.consolerunner\3.9.0</PkgNUnit_ConsoleRunner>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\htshe\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

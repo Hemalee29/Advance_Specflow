@@ -6,6 +6,7 @@ using System;
 using System.Threading;
 
 using Driver = Docker.DotNet.Models.Driver;
+//using MarsQA_1.Specflow_Pages.Helper;
 
 namespace MarsQA_1.Pages
 {
@@ -16,11 +17,11 @@ namespace MarsQA_1.Pages
 
         public void ClickOnJoin(IWebDriver driver)
         {
-        //    WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 20));
+            WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 0, 20));
 
-        //    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='home']/div/div/div[1]/div/button")));
-        IWebElement JoinButton = driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/button"));
-        JoinButton.Click();
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='home']/div/div/div[1]/div/button")));
+            IWebElement JoinButton = driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/button"));
+            JoinButton.Click();
         }
 
     public void EnterValidData(IWebDriver driver)
@@ -36,10 +37,13 @@ namespace MarsQA_1.Pages
 
             //Enter Email Address
             IWebElement Email = driver.FindElement(By.Name("email"));
+            //Email.SendKeys(ExcelLibHelper.ReadData(2, "username"));
+
             Email.SendKeys("infohemalipatel29@gmail.com");
 
             //Enter Password
             IWebElement Password = driver.FindElement(By.Name("password"));
+            //Password.SendKeys(ExcelLibHelper.ReadData(2, "password"));
             Password.SendKeys("hemali@2910");
 
             //Enter Confirm Password
@@ -52,6 +56,21 @@ namespace MarsQA_1.Pages
             Cheakbox.Click();
 
         }
+
+        //internal void ClickMeTORegister()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //internal void EnterValidData()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //internal void ClickOnJoin()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void ClickMeTORegister(IWebDriver driver)
 
