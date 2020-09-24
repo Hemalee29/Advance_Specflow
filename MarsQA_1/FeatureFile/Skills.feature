@@ -3,27 +3,24 @@
 	
 
 @mytag
-Scenario: Add new Skills
-	Given Navigate to Home Page and Click on the Signin button
-	And  click in the Skills tab
+Scenario:1 Add new Skills
+	Given click in the Skills tab 
 	When I click in the add new Skills
-	Then I am verify that Skills is succsfully add or not 
+	Then I am verify that Skills record add or not 
 
 
 
 @mytag
-Scenario: Edit Skills
-	Given Navigate to Home Page and Click on the Signin button
-	And  I click in Edit Button
-	When I edit the Skills record and dispaly the alert message
+Scenario:2 Edit Skills
+	Given click in the Skills tab
+	When I click in Edit Button of skill
+	And I edit the Skills record and dispaly the alert message
 	Then I am verify that Skills record is edit or not 
 
 
 
 
 @mytag
-Scenario: Delete Skills
-	Given Navigate to Home Page and Click on the Signin button
-	And  I click in Delete Button
-	When Delete the record and display the alert message
-	Then I am verify that Skills record is Delete 
+Scenario:3 Delete Skills
+	Given I click in Delete Button for skills
+	

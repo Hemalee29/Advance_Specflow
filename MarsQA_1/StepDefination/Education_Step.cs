@@ -1,61 +1,72 @@
-﻿using System;
+﻿using MarsQA_1.Hooks;
+using MarsQA_1.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using MarsQA_1.Helper;
+
 
 namespace MarsQA_1.StepDefination
 {
     [Binding]
     public sealed class Education_Step
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        Education_Page _Education = new Education_Page();
 
-        private readonly ScenarioContext _scenarioContext;
 
-        public Education_Step(ScenarioContext scenarioContext)
+        [Given(@"click in the Education tab")]
+        public void GivenClickInTheEducationTab()
         {
-            _scenarioContext = scenarioContext;
+            _Education.Education_tab();
         }
 
-        [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        [When(@"I add the new Education")]
+        public void WhenIAddTheNewEducation()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata 
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            _Education.Education_Detail_Add();
         }
 
-        [Given("the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int number)
+        [Then(@"I am verify that Education is succsfully add or not")]
+        public void ThenIAmVerifyThatEducationIsSuccsfullyAddOrNot()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata 
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            _Education.Education_Add();
         }
 
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
-        {
-            //TODO: implement act (action) logic
+        //Edit Education
 
-            _scenarioContext.Pending();
+
+
+        [When(@"Click on the Edit button")]
+        public void WhenClickOnTheEditButton()
+        {
+            _Education.Edit_Button();
         }
 
-        [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
+        [When(@"I edit the Education record and dispaly the alert message")]
+        public void WhenIEditTheEducationRecordAndDispalyTheAlertMessage()
         {
-            //TODO: implement assert (verification) logic
-
-            _scenarioContext.Pending();
+            _Education.Edit_Record();
         }
+
+        [Then(@"I am verify that Education record is edit or not")]
+        public void ThenIAmVerifyThatEducationRecordIsEditOrNot()
+        {
+            _Education.Edit_Record_Update();
+        }
+
+
+        //Delete record
+
+        [When(@"Click on the Delete button")]
+        public void WhenClickOnTheDeleteButton()
+        {
+            _Education.DeleteEducation();
+        }
+
+
+        
+
     }
 }

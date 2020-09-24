@@ -11,8 +11,5 @@
     <Compile Update="StepDefination\Skills_Step.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="StepDefination\StepDefinition.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

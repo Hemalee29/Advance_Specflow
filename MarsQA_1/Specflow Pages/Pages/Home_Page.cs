@@ -11,7 +11,7 @@ namespace MarsQA_1.Pages
 {
     class Home_Page
     {
-        [OneTimeSetUp]
+        
         public void OpenHomePage(IWebDriver driver)
         {
 

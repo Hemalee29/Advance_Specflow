@@ -1,61 +1,64 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Docker.DotNet.Models;
+using MarsQA_1.Pages;
 using TechTalk.SpecFlow;
+using MarsQA_1.Helper;
+using Driver = MarsQA_1.Helper.Driver;
 
 namespace MarsQA_1.StepDefination
 {
     [Binding]
     public sealed class Skills_Step
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
-
-        private readonly ScenarioContext _scenarioContext;
-
-        public Skills_Step(ScenarioContext scenarioContext)
+        skillAdd_Page _skill = new skillAdd_Page();
+        [Given(@"click in the Skills tab")]
+        public void GivenClickInTheSkillsTab()
         {
-            _scenarioContext = scenarioContext;
+            _skill.Find_Skill_tab();
         }
 
-        [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        [When(@"I click in the add new Skills")]
+        public void WhenIClickInTheAddNewSkills()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata 
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            _skill.Add_Record();
         }
 
-        [Given("the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int number)
+        [Then(@"I am verify that Skills record add or not")]
+        public void ThenIAmVerifyThatSkillsRecordAddOrNot()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata 
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            _scenarioContext.Pending();
+            _skill.Add();
         }
 
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
-        {
-            //TODO: implement act (action) logic
+        //Edit the skills
 
-            _scenarioContext.Pending();
+
+        
+
+        [When(@"I click in Edit Button of skill")]
+        public void WhenIClickInEditButtonOfSkill()
+        {
+            _skill.Click_Edit_Button();
         }
 
-        [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
-        {
-            //TODO: implement assert (verification) logic
 
-            _scenarioContext.Pending();
+        [When(@"I edit the Skills record and dispaly the alert message")]
+        public void WhenIEditTheSkillsRecordAndDispalyTheAlertMessage()
+        {
+            _skill.Edit_Skills();
         }
+
+        [Then(@"I am verify that Skills record is edit or not")]
+        public void ThenIAmVerifyThatSkillsRecordIsEditOrNot()
+        {
+            _skill.Edit_Record();
+        }
+
+        //Delete skills
+
+        [Given(@"I click in Delete Button for skills")]
+        public void GivenIClickInDeleteButtonForSkills()
+        {
+            _skill.DeleteSkill();
+        }
+
     }
 }

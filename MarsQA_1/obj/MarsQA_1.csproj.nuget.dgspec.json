@@ -41,9 +41,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "BoDi": {
+              "target": "Package",
+              "version": "[1.4.1, )"
+            },
             "Docker.DotNet": {
               "target": "Package",
               "version": "[3.125.4, )"
+            },
+            "DocumentFormat.OpenXml": {
+              "target": "Package",
+              "version": "[2.11.3, )"
             },
             "DotNetSeleniumExtras.WaitHelpers": {
               "target": "Package",
@@ -57,9 +65,17 @@
               "target": "Package",
               "version": "[3.6.0, )"
             },
+            "ExcelNumberFormat": {
+              "target": "Package",
+              "version": "[1.0.10, )"
+            },
             "ExtentReports": {
               "target": "Package",
               "version": "[4.1.0, )"
+            },
+            "IKVM": {
+              "target": "Package",
+              "version": "[8.1.5717, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
@@ -96,6 +112,18 @@
             "SpecFlow.Tools.MsBuild.Generation": {
               "target": "Package",
               "version": "[3.4.8, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.1.58, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[4.7.1, )"
             },
             "nunit": {
               "target": "Package",

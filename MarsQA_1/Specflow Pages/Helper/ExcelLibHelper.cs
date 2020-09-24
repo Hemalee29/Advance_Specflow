@@ -8,10 +8,12 @@ using System.Linq;
 using System.Text;
 
 
-namespace MarsQA_1.Specflow_Pages.Helper
+namespace MarsQA_1.Helpers
 {
-    public class ExcelLibHelper
+    class ExcelLibHelper
     {
+        #region Excel Read Data
+
 
         private static readonly List<Datacollection> DataCol = new List<Datacollection>();
 
@@ -38,6 +40,7 @@ namespace MarsQA_1.Specflow_Pages.Helper
 
         private static DataTable ExcelToDataTable(string fileName, string sheetName)
         {
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             // Open file and return as Stream
             using (var stream = File.Open(fileName, FileMode.Open, FileAccess.Read))
             {
@@ -112,6 +115,7 @@ namespace MarsQA_1.Specflow_Pages.Helper
             public string ColName { get; set; }
             public string ColValue { get; set; }
         }
-
     }
+
+    #endregion
 }

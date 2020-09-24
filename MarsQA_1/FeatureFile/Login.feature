@@ -1,12 +1,7 @@
 ﻿Feature: Login
-	Login into the system
-
-
-
-
-
+	
 
 @mytag
-Scenario: Successfully Login
-	When Click on Login button
-	Then I should be able to login succesfully with valid creadential
+Scenario: Successfully login in Mars
+	When Click on the Login button
+	Then I should be able to login successfully with valid credenatial
