@@ -3,14 +3,16 @@ using com.sun.tools.javac.util;
 using Docker.DotNet.Models;
 using MarsQA_1.Helpers;
 using MongoDB.Driver.Core.Authentication;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using sun.security.util;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-
+using Assert = NUnit.Framework.Assert;
 using Driver = MarsQA_1.Helper.Driver;
 
 namespace MarsQA_1.Pages
@@ -21,13 +23,13 @@ namespace MarsQA_1.Pages
 
         public void ClickIn()
         {
-            
-                //Click on the Login Button
 
-                Thread.Sleep(2000);
-                 Driver.driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/a")).Click();
-                
+            //Click on the Login Button
 
+            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='home']/div/div/div[1]/div/a")));
+            IWebElement Click = Driver.driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/a"));
+            Click.Click();
+            //Driver.driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/a")).Click();
 
         }
 
@@ -61,8 +63,35 @@ namespace MarsQA_1.Pages
             LoginButton.Click();
 
 
+
+            //try
+            //{
+            //    new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='ui compact menu']//span[text()='hemalee']")));
+
+            //    IWebElement HeyHemalee = Driver.driver.FindElement(By.XPath("//div[@class='ui compact menu']//span[text()='hemalee']"));
+
+            //    Assert.Pass(HeyHemalee.Text, Is.EqualTo("Hi hemalee"));
+            //    if (HeyHemalee.Text == "Hi hemalee")
+            //    {
+            //        Assert.Pass("Login success");
+            //    }
+            //    else
+            //    {
+            //        Assert.Fail("Login fail");
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Validation is not performing" + e);
+            //}
+
+
+
         }
 
-        
     }
-}
+
+
+       
+    }
+

@@ -46,6 +46,32 @@ namespace MarsQA_1.Pages
         {
             //Add Language
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[3]/input[1]")).Click();
+
+            //try
+            //{
+                new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")));
+
+                IWebElement Hindi = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
+
+                
+                if (Hindi.Text == "Hindi")
+                {
+                Assert.Pass("Language add succsesfully");
+                //Console.WriteLine("Language add succsesfully");
+                }
+                else
+                {
+                    Assert.Fail("Language add not succsesfully");
+                //Console.WriteLine("Language not add succsesfully");
+            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Validation is not performing" + e);
+            //}
+
+
+
         }
 
         //Edit Language
@@ -89,6 +115,33 @@ namespace MarsQA_1.Pages
             //click on the update button
             Thread.Sleep(2000);
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/span/input[1]")).Click();
+
+            //try
+            //{
+            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")));
+
+            IWebElement British = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]"));
+
+
+            if (British.Text == "British")
+            {
+                //Assert.Pass("Language Edit succsesfully");
+                Console.WriteLine("Education Edit passed");
+            }
+            else
+            {
+                //Assert.Fail("Language Edit not succsesfully");
+                Console.WriteLine("Education Edit failed");
+            }
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine("Validation is not performing" + e);
+            //}
+
+
+
+
         }
 
 
@@ -101,9 +154,25 @@ namespace MarsQA_1.Pages
             new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(50)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//td[text()='British']//parent::tr//following-sibling::span[@class='button']//i[@class='remove icon']")));
             Driver.driver.FindElement(By.XPath("//td[text()='British']//parent::tr//following-sibling::span[@class='button']//i[@class='remove icon']")).Click();
 
+            Thread.Sleep(2000);
+            //new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td[1]")));
+
+            IWebElement British = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table"));
 
 
+            if (British.Text != "British")
+            {
+                Assert.Pass("Language Delete succsesfully");
+                //Console.WriteLine("passed");
             }
+            else
+            {
+                Assert.Fail("Language Delete not succsesfully");
+                //Console.WriteLine("failed");
+            }
+
+
+        }
 
     }
 }

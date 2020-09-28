@@ -33,7 +33,7 @@ namespace MarsQA_1.Hooks
            
             ExcelLibHelper.PopulateInCollection(@"D:\Internship_2020\MarsQA_1\MarsQA_1\SpecflowTests\Data\Mars.xlsx", "Credentials");
 
-          
+            Thread.Sleep(2000);
             Mars_Login _login = new Mars_Login();
             _login.ClickIn();
             _login.SignIn();

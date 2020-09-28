@@ -12,17 +12,18 @@ namespace MarsQA_1.StepDefination
     [Binding]
     public sealed class Login
     {
-                [When(@"Click on the Login button")]
+        Mars_Login _Login = new Mars_Login();
+        [When(@"Click on the Login button")]
         public void WhenClickOnTheLoginButton()
         {
-            Mars_Login _Login = new Mars_Login();
+            
             _Login.ClickIn();
         }
 
         [Then(@"I should be able to login successfully with valid credenatial")]
         public void ThenIShouldBeAbleToLoginSuccessfullyWithValidCredenatial()
         {
-            Mars_Login _Login = new Mars_Login();
+            
             _Login.SignIn();
         }
 

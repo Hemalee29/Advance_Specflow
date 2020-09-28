@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using MarsQA_1.Helper;
 using Driver = MarsQA_1.Helper.Driver;
+using NUnit.Framework;
 
 namespace MarsQA_1.Pages
 {
@@ -46,6 +47,22 @@ namespace MarsQA_1.Pages
             //Add Detail
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/div/div[3]/input[1]")).Click();
 
+
+            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[1]")));
+
+            IWebElement CISCO = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[1]"));
+
+
+            if (CISCO.Text == "CISCO")
+            {
+                //Assert.Pass("Language Edit succsesfully");
+                Console.WriteLine("Add Certificate passed");
+            }
+            else
+            {
+                //Assert.Fail("Language Edit not succsesfully");
+                Console.WriteLine("Add certificate failed");
+            }
 
         }
 
@@ -89,16 +106,51 @@ namespace MarsQA_1.Pages
         public void Add_Certificate_Details()
         {
             //click on the update button
+            Thread.Sleep(2000);
             Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td/div/span/input[1]")).Click();
+
+
+            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[1]")));
+
+            IWebElement CISCO123 = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[1]"));
+
+
+            if (CISCO123.Text == "CISCO123")
+            {
+                //Assert.Pass("Language Edit succsesfully");
+                Console.WriteLine("Certificate Edit passed");
+            }
+            else
+            {
+                //Assert.Fail("Language Edit not succsesfully");
+                Console.WriteLine("certificate Edit  failed");
+            }
+
         }
 
         public void DeleteCertficate()
         {
 
             //Delete the Record
-            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//td[text()='CISCO123']//parent::tr//following-sibling::span[@class='button']//i[@class='remove icon']")));
-            Driver.driver.FindElement(By.XPath("//td[text()='CISCO123']//parent::tr//following-sibling::span[@class='button']//i[@class='remove icon']")).Click();
+            new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[4]/span[2]/i")));
+            Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[4]/span[2]/i")).Click();
 
+
+            //new WebDriverWait(Driver.driver, TimeSpan.FromSeconds(20)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[5]/div[1]/div[2]/div/table/tbody/tr/td[1]")));
+            Thread.Sleep(2000);
+            IWebElement CISCO123 = Driver.driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[4]/div/div[2]/div/table"));
+
+
+            if (CISCO123.Text != "CISCO123")
+            {
+                Assert.Pass("Certificate Delete succsesfully");
+                //Console.WriteLine("passed");
+            }
+            else
+            {
+                Assert.Fail("Certificate Delete not succsesfully");
+                //Console.WriteLine("failed");
+            }
 
         }
 
